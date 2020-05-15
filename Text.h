@@ -8,7 +8,7 @@
 
 class Text {
 
-public: //TODO: change to public
+private:
     char* pStore;
 public:
     virtual ~Text();
@@ -17,11 +17,11 @@ public:
     Text(const char*);
     void assign(const char*);
     void assign(const Text&);
-    Text operator= (const Text&);
+    Text& operator= (const Text&);
     void append(const char*);
     void append(const Text&);
     void clear();
-    int length();
+    int length() const;
     bool isEmpty() const;
     const char* getCstring() const;
 };

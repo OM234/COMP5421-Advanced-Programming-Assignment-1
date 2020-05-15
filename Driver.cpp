@@ -10,11 +10,14 @@ using namespace std;
 int main() {
 
     Text a{"abc"};
-    a.assign("hil");
-    Text b{"no"};
-    b.assign(a);
-    b.assign("123");
-    cout << b.pStore << endl;
+    Text b{a};
+    Text d{"defg"};
+    Text c;
+    c.assign(b);
+    c.append(d);
+    const char* f = a.getCstring();
+    cout << f << endl;
+    cout << a.getCstring() << endl;
 //    b.assign(a);
 
     return 0;
