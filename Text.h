@@ -1,5 +1,5 @@
 //
-// Created by Oz on 5/14/2020.
+// Created by Osman Momoh on 5/14/2020.
 //
 
 #ifndef COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_TEXT_H
