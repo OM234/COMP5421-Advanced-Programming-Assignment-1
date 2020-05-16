@@ -4,22 +4,42 @@
 
 #include<iostream>
 #include "Text.h"
+#include "Menu.h"
 
 using namespace std;
 
+void demoText();
+
 int main() {
 
-    Text a{"abc"};
-    Text b{a};
-    Text d{"defg"};
-    Text c;
-    c.assign(b);
-    c.append(d);
-    const char* f = a.getCstring();
-    cout << f << endl;
-    cout << a.getCstring() << endl;
-//    b.assign(a);
-
+    demoText();
     return 0;
+}
 
+void demoText() {
+
+    Text t1;
+    Text t2("quick brown fox");
+    Text t3{ t2 };
+    cout << "t1: " << t1 << endl;
+    cout << "t2: " << t2 << endl;
+    cout << "t3: " << t3 << endl;
+
+    t1.append("The ");
+    cout << "t1: " << t1 << endl;
+    t1.append(t2);
+    cout << "t1: " << t1 << endl;
+
+    t2 = Text(" jumps over ");
+    cout << "t2: " << t2 << endl;
+
+    t3.assign("a lazy dog");
+    cout << "t3: " << t3 << endl;
+
+    t1.append(t2);
+    cout << "t1: " << t1 << endl;
+    t1.append(t3);
+    cout << "t1: " << t1 << endl;
+
+    return;
 }

@@ -5,8 +5,10 @@
 #include "Text.h"
 #include <cstring> //for strcpy
 
+char* strConcat(const char* str1, const char* str2); // Helper function for concatenation (strcat was causing errors);
+
 Text::~Text() {
-    delete pStore; //TODO: should it be []?
+    delete[] pStore; //TODO: should it be []?
 }
 
 Text::Text() {
@@ -44,12 +46,12 @@ Text &Text::operator=(const Text &txt) {
     return *this;
 }
 
-void Text::append(const char *pCstr) {
-    strcat(this->pStore, pCstr);
+void Text::append(const char *pCstr) { 
+    this->pStore = strConcat(this->pStore, pCstr);
 }
 
-void Text::append(const Text &txt) {
-    strcat(this->pStore, txt.pStore);
+void Text::append(const Text &txt) {    
+    this->pStore = strConcat(this->pStore, txt.pStore); 
 }
 
 void Text::clear() {
@@ -71,5 +73,25 @@ const char* Text::getCstring() const {
     return this->pStore;
 }
 
+std::ostream& operator<<(std::ostream& sout, const Text& txt) {
+    sout << txt.getCstring();
+    return sout;
+}
 
+char* strConcat(const char* str1, const char* str2) {
+
+    char* str3 = new char[strlen(str1) + strlen(str2)];
+
+    for (int i = 0; i < strlen(str1); i++) {
+        str3[i] = str1[i];
+    }
+
+    for (int i = strlen(str1); i < strlen(str1) + strlen(str2); i++) {
+        str3[i] = str2[i - strlen(str1)];
+    }
+
+    str3[strlen(str1) + strlen(str2)] = 0;
+
+    return str3;
+}
 

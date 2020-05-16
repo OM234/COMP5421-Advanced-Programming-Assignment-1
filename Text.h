@@ -4,7 +4,7 @@
 
 #ifndef COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_TEXT_H
 #define COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_TEXT_H
-
+#include<ostream>
 
 class Text {
 
@@ -26,5 +26,6 @@ public:
     const char* getCstring() const;
 };
 
+std::ostream& operator<<(std::ostream&, const Text&);
 
 #endif //COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_TEXT_H
