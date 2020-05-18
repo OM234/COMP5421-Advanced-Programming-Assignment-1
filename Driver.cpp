@@ -10,7 +10,7 @@ using namespace std;
 
 void demoText();
 
-int main() {
+int main2() {  //TODO: change to main
 
     demoText();
     return 0;

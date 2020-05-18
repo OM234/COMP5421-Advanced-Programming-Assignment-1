@@ -19,17 +19,17 @@ public:
 	Menu();
 	Menu(const Menu&);
 	virtual ~Menu();
-	Menu& operator=(const Menu& m);
-	void insert(int, Text&);
+	Menu& operator=(const Menu&);
+	void insert(int, const Text&); //added const to &Text parameter
 	void insert(int, const char*);
 	void push_back(const char*);
 	void push_back(const Text&);
 	void remove(int);
-	int size() const;
-	int getCapacity() const;
 	void pop_back();
-	Text get(int);
-	Text toString() const;
+	int getCount() const; //replaces size()
+	int getCapacity() const;
+	const Text getText(int) const; // replaces get()
+	const Text toString() const;
 	int read_option_number();
 	void set_top_message(const Text&);
 	void set_bottom_message(const Text&);
@@ -37,5 +37,7 @@ public:
 	void clear_bottom_message();
 	bool isEmpty() const;
 };
+
+std::ostream& operator<<(std::ostream&, const Menu&);
 
 #endif //COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_MENU_H

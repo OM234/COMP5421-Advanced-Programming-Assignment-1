@@ -5,9 +5,12 @@
 #include "Text.h"
 #include <cstring> //for strcpy
 
+using namespace std;
+
 char* strConcat(const char* str1, const char* str2); // Helper function for concatenation (strcat was causing errors);
 
 Text::~Text() {
+    //cout << "deleting: " << pStore << endl;
     delete[] pStore; //TODO: should it be []?
 }
 
@@ -26,12 +29,12 @@ Text::Text(const char *pCstr) {
 }
 
 void Text::assign(const char *pCstr) {
-    //this->pStore = new char[strlen(pCstr)];
+    this->pStore = new char[strlen(pCstr)];
     strcpy(this->pStore, pCstr);
 }
 
 void Text::assign(const Text &txt) {
-    //this->pStore = new char[strlen(txt.pStore)];
+    this->pStore = new char[strlen(txt.pStore)];
     strcpy(this->pStore, txt.pStore);
 }
 
@@ -40,7 +43,7 @@ Text &Text::operator=(const Text &txt) {
     if (this == &txt)    // if txt is this, return this
         return *this;
 
-    //this->pStore = new char[strlen(txt.pStore)];
+    this->pStore = new char[strlen(txt.pStore)];
     strcpy(this->pStore, txt.pStore);
 
     return *this;
