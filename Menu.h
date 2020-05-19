@@ -31,7 +31,7 @@ public:
 	const Text getText(int) const; // replaces get()
 	const Text toString() const;
 	int read_option_number();
-	void set_top_message(const Text&);
+	void set_top_message (const Text&);
 	void set_bottom_message(const Text&);
 	void clear_top_message();
 	void clear_bottom_message();
