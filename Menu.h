@@ -1,3 +1,10 @@
+/*
+    Author:     Osman Momoh
+    Student ID: 26220150
+    Course:     COMP 5421: Advanced Programming
+    Date:       5/14/2020, Summer 2020
+*/
+
 #ifndef COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_MENU_H
 #define COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_MENU_H
 #include "Text.h"
@@ -5,7 +12,7 @@
 
 class Menu
 {
-public: //TODO : change to public
+private:
 	
 	Text* option_list;
 	int capacity;
@@ -30,7 +37,7 @@ public:
 	int getCapacity() const;
 	const Text getText(int) const; // replaces get()
 	const Text toString() const;
-	int read_option_number();
+	void read_option_number(); //made void to facilitate demo
 	void set_top_message (const Text&);
 	void set_bottom_message(const Text&);
 	void clear_top_message();
@@ -38,6 +45,6 @@ public:
 	bool isEmpty() const;
 };
 
-std::ostream& operator<<(std::ostream&, const Menu&);
+std::ostream& operator<<(std::ostream&, const Menu&); //operator << override
 
 #endif //COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_MENU_H

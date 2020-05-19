@@ -1,6 +1,9 @@
-//
-// Created by Osman Momoh on 5/14/2020.
-//
+/*
+    Author:     Osman Momoh
+    Student ID: 26220150
+    Course:     COMP 5421: Advanced Programming
+    Date:       5/14/2020, Summer 2020
+*/
 
 #ifndef COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_TEXT_H
 #define COMP5421_ADVANCED_PROGRAMMING_ASSIGNMENT_1_TEXT_H
