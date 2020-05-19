@@ -16,8 +16,8 @@ void demoMenu();
 
 int main() {
 
-    demoText();
-    demoMenu();
+    //demoText();
+    //demoMenu();
     return 0;
 }
 
